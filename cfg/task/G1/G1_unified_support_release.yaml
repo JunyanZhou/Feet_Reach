@@ -1,0 +1,28 @@
+# @package task
+defaults:
+  - /task/G1/G1_unified_support_reach_v2
+  - _self_
+
+name: G1UnifiedSupportRelease
+proactive_contact: true
+command:
+  # A single, statically screened anchor precedes dynamic Isaac validation.
+  dataset:
+    mem_paths: [wall_foot_reach/val]
+    path_weights: [1.0]
+    fix_ds: 0
+    fix_motion_id: 0
+  goal_offset_range_m:
+    left_hand: [[0.0, -0.06, 0.0], [0.0, 0.0, 0.0]]
+  contact_compliance:
+    enabled: true
+    force_cap_N: 80.0
+reward:
+  tracking:
+    wall_hand_tracking: {weight: 5.0}
+    # The reference joints encode the hand-on-wall pose and would conflict
+    # directly with the commanded hand withdrawal.
+    joint_pos_tracking: {weight: 0.0}
+    joint_vel_tracking: {weight: 0.1}
+  contact:
+    wall_contact_away_cost: {weight: 1.0}

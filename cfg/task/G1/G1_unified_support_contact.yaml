@@ -1,0 +1,17 @@
+# @package task
+defaults:
+  - /task/G1/G1_unified_support_reach_v2
+  - _self_
+
+name: G1UnifiedSupportContact
+proactive_contact: true
+command:
+  contact_compliance:
+    enabled: true
+    force_cap_N: 80.0
+reward:
+  contact:
+    # Physics-rate contact-onset impulse, peak load, and loading-rate costs.
+    wall_recontact_cost: {weight: 1.0}
+    # Sustained support remains allowed; excess normal load is penalized.
+    wall_force_cap_cost: {weight: 0.25}

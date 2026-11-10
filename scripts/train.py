@@ -61,6 +61,39 @@ def main(cfg: DictConfig):
 
     env, policy, vecnorm, primer = make_env_policy(cfg)
 
+    # A checkpoint can restore an old current_lr even when this run requests
+    # a new algo.lr. Keep the scheduler aligned with the newly built optimizer
+    # unless this is an explicit frame-resume of the same training schedule.
+    if (cfg.checkpoint_path and not cfg.get("resume_frames", 0)
+            and hasattr(policy, "current_lr") and hasattr(policy, "opt_student")):
+        optimizer = policy.opt_teacher if cfg.algo.phase == "train" else policy.opt_student
+        policy.current_lr = optimizer.param_groups[0]["lr"]
+
+    # A local goal-axis curriculum may update only selected input columns of
+    # the student actor. This preserves an already validated foot/x controller
+    # while testing whether new goal coordinates can be learned independently.
+    selected_goal_columns = cfg.get("actor_input_columns_only", None)
+    if selected_goal_columns is not None:
+        if aa.is_distributed() or cfg.algo.phase != "finetune":
+            raise ValueError("actor_input_columns_only requires single-process finetune")
+        columns = [int(i) for i in selected_goal_columns]
+        if not columns or len(columns) != len(set(columns)):
+            raise ValueError("actor_input_columns_only needs unique nonempty indices")
+        first = dict(policy.actor_student.named_parameters())[
+            "module.0.module.1.module.0.weight"]
+        observation_dim = int(env.observation_spec["policy"].shape[-1])
+        if any(i < 0 or i >= observation_dim for i in columns):
+            raise ValueError(f"Goal columns must be within policy dimension {observation_dim}")
+        for module in (policy.actor_student, policy.adapt_module,
+                       policy.adapt_joint_module):
+            for parameter in module.parameters():
+                parameter.requires_grad_(False)
+        first.requires_grad_(True)
+        mask = torch.zeros_like(first)
+        mask[:, columns] = 1.
+        first.register_hook(lambda gradient: gradient*mask)
+        print(f"Training only student first-layer columns {columns}; policy observation dim {observation_dim}")
+
     if cfg.get("resume_frames", 0) and hasattr(policy, "current_lr"):
         for name in ("opt_teacher", "opt_student", "opt_estimator", "opt_critic"):
             optimizer = getattr(policy, name, None)

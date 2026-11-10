@@ -1,0 +1,20 @@
+# @package task
+defaults:
+  - /task/G1/G1_unified_support_landing_root
+  - _self_
+
+name: G1UnifiedSupportLandingRootForce
+command:
+  contact_compliance:
+    enabled: true
+    force_cap_N: 80.0
+    peak_soft_N: 100.0
+    peak_scale_N: 100.0
+reward:
+  tracking:
+    root_pos_tracking: {weight: 20.0}
+    joint_pos_tracking: {weight: 0.0}
+  contact:
+    landing_support_reward: {weight: 30.0}
+    landing_impact_cost: {weight: 2.0}
+    wall_peak_excess_cost: {weight: 0.5}

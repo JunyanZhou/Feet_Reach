@@ -1,0 +1,8 @@
+mujoco==3.3.7
+numpy>=1.26,<3
+scipy>=1.12,<2
+Pillow>=10
+imageio[ffmpeg]>=2.34
+matplotlib>=3.8
+usd-core>=24.5
+trimesh>=4

@@ -1,0 +1,20 @@
+# @package task
+defaults:
+  - /task/G1/G1_unified_support_release_static
+  - _self_
+
+name: G1UnifiedSupportNoContact
+command:
+  dataset:
+    mem_paths: [unified_withdrawn_support/train]
+    path_weights: [1.0]
+    fix_ds: 0
+    fix_motion_id: 0
+  goal_offset_range_m:
+    left_hand: [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+reward:
+  tracking:
+    wall_hand_tracking: {weight: 7.0}
+    joint_pos_tracking: {weight: 0.2}
+  contact:
+    wall_no_contact_cost: {weight: 2.0}

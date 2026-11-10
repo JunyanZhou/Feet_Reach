@@ -1,0 +1,13 @@
+# @package task
+defaults:
+  - /task/G1/G1_unified_support_reach
+  - _self_
+
+name: G1UnifiedSupportReachV2
+observation:
+  policy:
+    # Persistent goal offsets complement live-body target errors. A stable
+    # support target remains visible after the robot reaches it.
+    goal_offset_root_b: {}
+    goal_offset_left_hand_b: {}
+    goal_offset_right_foot_b: {}

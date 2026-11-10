@@ -27,6 +27,8 @@ def arguments():
     p.add_argument('--seed', type=int, default=42)
     p.add_argument('--random-foot-force', action='store_true',
                    help='Apply the existing randomized 0–20 N external-force schedule to the reaching left foot')
+    p.add_argument('--measure-physics-contact', action='store_true',
+                   help='Record the wall-filtered hand contact peak over each 200 Hz physics substep')
     p.add_argument('--output', type=Path)
     p.add_argument('--continue-on-instability', action='store_true', help='Record instability but continue all targets without resetting')
     p.add_argument('--video', action='store_true')
@@ -160,7 +162,8 @@ def main():
     # the compatible configuration default.
     if 'geometry_points' not in cfg.algo:
         cfg.algo.geometry_points = 0
-    if not cfg.task.command._target_.endswith('.WallFootReachCommand'):
+    if not cfg.task.command._target_.endswith((
+            '.WallFootReachCommand', '.UnifiedSupportReachCommand')):
         raise ValueError('Checkpoint is not a foot reach policy')
     has_wall = any(obj.get('type') == 'wall' for obj in (cfg.task.objects or []))
     cfg.checkpoint_path = str(args.checkpoint)
@@ -173,6 +176,10 @@ def main():
     cfg.task.command.foot_force.enabled = args.random_foot_force
     cfg.task.command.foot_force.train_only = False
     cfg.task.command.foot_force.force_range = [0., 20.]
+    if args.measure_physics_contact:
+        cfg.task.proactive_contact = True
+        cfg.task.command.contact_compliance = OmegaConf.create(
+            {'enabled': True, 'force_cap_N': 80.})
     cfg.task.command.disable_motion_finish = True
     cfg.task.command.dataset.fix_ds = 0; cfg.task.command.dataset.fix_motion_id = 0
     cfg.task.termination = {}  # Evaluate failures explicitly, never auto-reset them away.
@@ -192,6 +199,7 @@ def main():
             schedule='random rest/ramp-up/hold/ramp-down; zero_prob from task config',
         ) if args.random_foot_force else None,
         video_enabled=args.video,
+        physics_rate_wall_contact=args.measure_physics_contact,
         external_force_visualized=bool(args.video and args.random_foot_force),
         rng_seed_timing='after checkpoint loading',
         repeats=1, settle_s=args.settle, reach_s=args.reach, hold_s=args.hold,
@@ -334,6 +342,8 @@ def main():
                 error=float(torch.linalg.vector_norm(actual-target)), root_drift=root_drift,
                 support_drift=support_drift, hand_drift=hand_drift,
                 hand_wall_force=hand_wall_force.cpu().numpy(),
+                hand_wall_peak_physics_N=(cmd.contact_peak_N[0].item()
+                                           if args.measure_physics_contact else None),
                 support_foot_force=support_foot_force.cpu().numpy(),
                 external_foot_force=external_foot_force.cpu().numpy(),
                 failure='+'.join(reasons)), sole
@@ -481,6 +491,7 @@ def main():
                     fields=['point','repeat','time_s','phase','target_x','target_y','target_z',
                             'actual_x','actual_y','actual_z','error_m','root_drift_m','support_drift_m','hand_drift_m',
                             'left_hand_wall_force_x_N','left_hand_wall_force_y_N','left_hand_wall_force_z_N','left_hand_wall_force_norm_N',
+                            'left_hand_wall_peak_physics_N',
                             'right_support_foot_force_x_N','right_support_foot_force_y_N','right_support_foot_force_z_N','right_support_foot_force_norm_N',
                             'external_left_foot_force_x_N','external_left_foot_force_y_N','external_left_foot_force_z_N','external_left_foot_force_norm_N',
                             'failure']
@@ -500,6 +511,7 @@ def main():
                                     root_drift_m=m['root_drift'],support_drift_m=m['support_drift'],hand_drift_m=m['hand_drift'],
                                     **dict(zip(['left_hand_wall_force_x_N','left_hand_wall_force_y_N','left_hand_wall_force_z_N'],m['hand_wall_force'])),
                                     left_hand_wall_force_norm_N=float(np.linalg.norm(m['hand_wall_force'])),
+                                    left_hand_wall_peak_physics_N=m['hand_wall_peak_physics_N'],
                                     **dict(zip(['right_support_foot_force_x_N','right_support_foot_force_y_N','right_support_foot_force_z_N'],m['support_foot_force'])),
                                     right_support_foot_force_norm_N=float(np.linalg.norm(m['support_foot_force'])),
                                     **dict(zip(['external_left_foot_force_x_N','external_left_foot_force_y_N','external_left_foot_force_z_N'],m['external_foot_force'])),

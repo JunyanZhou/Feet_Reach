@@ -1,0 +1,35 @@
+# @package task
+defaults:
+  - /task/G1/G1_unified_support_reach_v2
+  - _self_
+
+name: G1UnifiedSupportLanding
+max_episode_length: 320
+proactive_contact: true
+command:
+  anchor_init_prob: 1.0
+  dataset:
+    mem_paths: [wall_foot_reach/val]
+    path_weights: [1.0]
+    fix_ds: 0
+    fix_motion_id: 0
+  disable_motion_finish: true
+  foot_force:
+    enabled: false
+  landing_cycle:
+    enabled: true
+    settle_steps: 50
+    reach_steps: 100
+    target_xyz: [0.0, 0.06, 0.0]
+    load_target_N: 80.0
+    peak_soft_N: 300.0
+reward:
+  tracking:
+    swing_foot_tracking: {weight: 8.0}
+    support_foot_tracking: {weight: 4.0}
+    wall_hand_tracking: {weight: 4.0}
+    root_pos_tracking: {weight: 2.0}
+    joint_pos_tracking: {weight: 0.2}
+  contact:
+    landing_support_reward: {weight: 6.0}
+    landing_impact_cost: {weight: 0.5}

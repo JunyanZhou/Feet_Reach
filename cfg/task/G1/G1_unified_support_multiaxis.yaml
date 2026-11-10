@@ -1,0 +1,20 @@
+# @package task
+defaults:
+  - /task/G1/G1_unified_support_reach_v2
+  - _self_
+
+name: G1UnifiedSupportMultiaxis
+command:
+  # Small offsets about the wall-supported, collision-checked reference.
+  # Only one target group changes in an episode, retaining the original foot task.
+  goal_jitter_m:
+    root: [0.015, 0.015, 0.0]
+    left_hand: [0.015, 0.0, 0.015]
+    right_foot: [0.0, 0.0, 0.0]
+  goal_jitter_one_goal: true
+reward:
+  tracking:
+    root_pos_tracking: {weight: 8.0}
+    wall_hand_tracking: {weight: 8.0}
+    support_foot_tracking: {weight: 5.0}
+    joint_pos_tracking: {weight: 0.75}

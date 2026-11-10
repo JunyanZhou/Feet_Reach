@@ -2,6 +2,10 @@
 
 G1 扶墙脚部 reaching：左手扶墙、右脚支撑、左脚跟踪实时 root 坐标系下的笛卡尔目标。包含参考轨迹生成、teacher / adapt / finetune 训练、固定目标精度评估和网页遥操作。
 
+## Unified support controller：随仓库运行
+
+仓库包含当前选定的 unified student 权重、观测归一化、训练与验证数据以及脚目标工作空间。在配置好 Isaac Lab 的机器上运行 `bash scripts/unified_support/run.sh`，会用真实物理仿真完成 20 个脚目标和 7 个 root／手／支撑脚目标响应评估。可用 `bash scripts/unified_support/train_next.sh teaching` 从现有权重继续 curriculum 微调。安装步骤、检查项与能力范围见 [运行说明](scripts/unified_support/README.md)。
+
 ## Whole-body compliance：本地 MuJoCo demo
 
 仓库已包含训练好的 **纯 student policy**、归一化参数、G1 模型和 mesh。
@@ -72,7 +76,7 @@ export ISAACLAB_PATH=/path/to/IsaacLab
 "$PYTHON" -m wandb login
 ```
 
-已有 W&B 登录凭据或 `WANDB_API_KEY` 时无需重新登录。还需准备 `artifacts/foot_reach/workspace.npz`、`artifacts/foot_reach/manifest.json`，以及 checkpoint 配置引用的轨迹数据和机器人资产。W&B 下载入口只下载权重。
+已有 W&B 登录凭据或 `WANDB_API_KEY` 时无需重新登录。一般 checkpoint 评估仍需准备其配置引用的数据和机器人资产；上面的 unified student 运行包已包含其专用验证数据和工作空间。W&B 下载入口只下载权重。
 
 ## W&B checkpoint 评估
 

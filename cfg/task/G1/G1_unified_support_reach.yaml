@@ -1,0 +1,34 @@
+# @package task
+defaults:
+  - /task/G1/G1_wall_foot_reach
+  - _self_
+
+name: G1UnifiedSupportReach
+command:
+  _target_: active_adaptation.envs.mdp.commands.unified_support_reach.UnifiedSupportReachCommand
+  # Zero jitter makes the imported v2 foot policy an exact action baseline.
+  # Enable small, feasibility-checked ranges only for subsequent curriculum stages.
+  goal_jitter_m:
+    root: [0.0, 0.0, 0.0]
+    left_hand: [0.0, 0.0, 0.0]
+    right_foot: [0.0, 0.0, 0.0]
+  goal_jitter_one_goal: true
+  # Stage 2: randomized, smoothly introduced external loads at changing body points.
+  # Disabled for the initial target-control curriculum and deployment evaluation.
+  aux_support_force:
+    enabled: false
+    train_only: true
+    body_names: [left_hand_mimic, torso_link, pelvis]
+    application_radius_m: 0.02
+    force_range: [0.0, 20.0]
+    ramp_up_range: [25, 100]
+    hold_range: [20, 200]
+    ramp_down_range: [25, 100]
+    rest_range: [20, 200]
+    zero_prob: 0.1
+observation:
+  policy:
+    target_root_pos_b: {}
+    target_left_hand_pos_b: {}
+    target_right_foot_pos_b: {}
+    support_contact_loads: {}

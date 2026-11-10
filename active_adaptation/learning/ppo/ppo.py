@@ -58,6 +58,7 @@ class PPOConfig:
 
     lr: float = 5e-4
     desired_kl: float = 0.01 # kl schedule
+    action_prior_coef: float = 0.0  # Optional mean-action anchor to loaded student.
 
     clip_param: float = 0.2
 
@@ -307,6 +308,14 @@ class PPOPolicy(TensorDictModuleBase):
         if not hasattr(self, "current_lr"):
             self.current_lr = self.cfg.lr
         
+        # A nonpositive desired KL explicitly disables adaptive LR. Without
+        # this guard, desired_kl=0 decays every positive-KL update to 1e-5.
+        # Read the active optimizer rate because a loaded checkpoint may have
+        # stored a different rate from the current run's algo.lr override.
+        if self.cfg.desired_kl <= 0:
+            optimizer = self.opt_teacher if self.cfg.phase == "train" else self.opt_student
+            self.current_lr = optimizer.param_groups[0]["lr"]
+            return
         if self.progress < 0.1:
             return
 
@@ -457,7 +466,21 @@ class PPOPolicy(TensorDictModuleBase):
             symmetry_loss_loc = mb["loc"].new_zeros(())
             symmetry_loss_std = mb["loc"].new_zeros(())
 
-        loss = policy_loss + entropy_loss + value_loss.mean() + reg_loss + symmetry_loss_loc + symmetry_loss_std
+        prior_loss = mb["loc"].new_zeros(())
+        prior_coef = self.cfg.get("action_prior_coef", 0.0)
+        if prior_coef > 0 and self.cfg.phase == "finetune":
+            if not hasattr(self, "_action_prior"):
+                raise RuntimeError("action_prior_coef requires a loaded student checkpoint")
+            prior_encoder, prior_actor = self._action_prior
+            with torch.no_grad():
+                prior_td = mb.clone()
+                prior_encoder(prior_td)
+                prior_actor(prior_td)
+            prior_loss = F.mse_loss(mb["loc"][:bsize], prior_td["loc"][:bsize])
+
+        loss = (policy_loss + entropy_loss + value_loss.mean() + reg_loss
+                + symmetry_loss_loc + symmetry_loss_std
+                + prior_coef * prior_loss)
 
         # do optimisation step
         opt_actor.zero_grad()
@@ -494,6 +517,7 @@ class PPOPolicy(TensorDictModuleBase):
             "actor/kl": kl.detach(),
             "actor/symmetry_loss_loc": symmetry_loss_loc.detach(),
             "actor/symmetry_loss_std": symmetry_loss_std.detach(),
+            "actor/action_prior_loss": prior_loss.detach(),
         }
 
         info["critic/explained_var"] = explained_var.mean().detach()
@@ -660,6 +684,15 @@ class PPOPolicy(TensorDictModuleBase):
             self.reg_lambda   = meta.get("reg_lambda", self.reg_lambda)
             self.progress     = meta.get("progress", self.progress)
             self.num_updates  = meta.get("num_updates", self.num_updates)
+        if self.cfg.get("action_prior_coef", 0.0) > 0 and self.cfg.phase == "finetune":
+            if aa.is_distributed():
+                raise ValueError("action_prior_coef currently requires a single process")
+            prior = (copy.deepcopy(self.adapt_module).eval(),
+                     copy.deepcopy(self.actor_student).eval())
+            for module in prior:
+                module.requires_grad_(False)
+            # Keep the frozen baseline outside registered children and checkpoints.
+            object.__setattr__(self, "_action_prior", prior)
 
     @staticmethod
     def soft_copy_(src_module: nn.Module, dst_module: nn.Module, tau: float):

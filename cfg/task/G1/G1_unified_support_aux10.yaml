@@ -1,0 +1,20 @@
+# @package task
+defaults:
+  - /task/G1/G1_unified_support_reach_v2
+  - _self_
+
+name: G1UnifiedSupportAux10
+command:
+  # Short, randomized, gradually applied wrenches. The source checkpoint is
+  # evaluated separately before and after this stage at the same force seeds.
+  aux_support_force:
+    enabled: true
+    train_only: true
+    body_names: [left_hand_mimic, torso_link, pelvis]
+    application_radius_m: 0.02
+    force_range: [0.0, 10.0]
+    ramp_up_range: [25, 100]
+    hold_range: [20, 200]
+    ramp_down_range: [25, 100]
+    rest_range: [20, 200]
+    zero_prob: 0.1

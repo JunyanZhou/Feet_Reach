@@ -1,0 +1,16 @@
+# @package task
+defaults:
+  - /task/G1/G1_unified_support_landing
+  - _self_
+
+name: G1UnifiedSupportLandingRoot
+max_episode_length: 400
+command:
+  landing_cycle:
+    root_shift_y_m: 0.04
+    transfer_steps: 50
+reward:
+  tracking:
+    root_pos_tracking: {weight: 12.0}
+  contact:
+    landing_support_reward: {weight: 12.0}

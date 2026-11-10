@@ -1,0 +1,9 @@
+{
+  "start_time_s": 19.5,
+  "end_time_s": 29.0,
+  "sample_hz": 60,
+  "method": "Cached, collision-audited bounded-IK recovery branch for visual task replay. Not an autonomous policy.",
+  "sha256": "8a2e84cb94a9dd280bc6812ac3a403057774b84575238b0e063e9cebbc6ff18c",
+  "geometry_audit": "artifacts/table_retrieval/geometry_audit.json",
+  "coordinate_frame": "world Z-up; root quaternion wxyz; joint order stored in NPZ"
+}

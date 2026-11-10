@@ -1,0 +1,22 @@
+{
+  "task": "G1GentleA",
+  "checkpoint": "checkpoint_final (2).pt",
+  "checkpoint_sha256": "6c558152cbeafeef8dda88587ff37518f854608f7df3990a1e70fef946004b34",
+  "low_level_checkpoint_sha256": "637ff52b2712b4ad3c5fa4b8004a85ff11567e703a92532345867de28c45dc7c",
+  "simulator": "MuJoCo",
+  "adapter": "cross-simulator preview, not parity validated",
+  "clip": "motions/val/ee_060_1.0.npz",
+  "wall": false,
+  "wall_x": 0.4,
+  "seconds": 5.999999999999894,
+  "frames": 90,
+  "first_fall_time": null,
+  "final_root_xyz": [
+    0.006856981738682203,
+    0.007910883883080255,
+    0.7828653072972973
+  ],
+  "final_hand_target_error_m": 0.11769864214114585,
+  "max_wall_force_N": 0.0,
+  "hand_wall_contact_samples": 0
+}

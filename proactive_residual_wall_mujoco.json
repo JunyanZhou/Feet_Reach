@@ -1,0 +1,22 @@
+{
+  "task": "G1ProactiveResidual",
+  "checkpoint": "checkpoint_final (1).pt",
+  "checkpoint_sha256": "5dc7d8b00e797dfca57f4963bd4b497dcc9d2c9de42e06d5368436b0e3748b8f",
+  "low_level_checkpoint_sha256": "637ff52b2712b4ad3c5fa4b8004a85ff11567e703a92532345867de28c45dc7c",
+  "simulator": "MuJoCo",
+  "adapter": "cross-simulator preview, not parity validated",
+  "clip": "motions/val/ee_060_1.0.npz",
+  "wall": true,
+  "wall_x": 0.4,
+  "seconds": 5.999999999999894,
+  "frames": 90,
+  "first_fall_time": null,
+  "final_root_xyz": [
+    0.01150108189090841,
+    0.006343589961083177,
+    0.7830842744079131
+  ],
+  "final_hand_target_error_m": 0.17045179745042524,
+  "max_wall_force_N": 86.6078137184359,
+  "hand_wall_contact_samples": 658
+}

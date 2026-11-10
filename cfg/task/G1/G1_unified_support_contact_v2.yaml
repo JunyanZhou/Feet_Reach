@@ -1,0 +1,16 @@
+# @package task
+defaults:
+  - /task/G1/G1_unified_support_contact
+  - _self_
+
+name: G1UnifiedSupportContactV2
+command:
+  contact_compliance:
+    enabled: true
+    force_cap_N: 80.0
+    peak_soft_N: 80.0
+    peak_scale_N: 40.0
+reward:
+  contact:
+    # Continuous-contact spikes are measured at the 200 Hz physics rate.
+    wall_peak_excess_cost: {weight: 0.5}

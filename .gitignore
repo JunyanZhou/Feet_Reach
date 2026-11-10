@@ -162,14 +162,54 @@ cython_debug/
 # hydra and wandb
 outputs/
 wandb/
-artifacts/
+artifacts/*
+!artifacts/foot_reach/
+artifacts/foot_reach/*
+!artifacts/foot_reach/workspace.npz
+!artifacts/unified_support_reach/
+artifacts/unified_support_reach/*
+# Selected trained unified controller; keep other generated artifacts ignored.
+!artifacts/unified_support_reach/v2_goal_offset_x10.pt
 
 # nohup
 *.out
 
 # assets
 *.ipynb
-*.mp4
+
+# Generated images and videos: keep all media out of GitHub.
+*.[pP][nN][gG]
+*.[aA][pP][nN][gG]
+*.[jJ][pP][gG]
+*.[jJ][pP][eE][gG]
+*.[jJ][fF][iI][fF]
+*.[gG][iI][fF]
+*.[wW][eE][bB][pP]
+*.[bB][mM][pP]
+*.[tT][iI][fF]
+*.[tT][iI][fF][fF]
+*.[sS][vV][gG]
+*.[aA][vV][iI][fF]
+*.[hH][eE][iI][cC]
+*.[hH][eE][iI][fF]
+*.[iI][cC][oO]
+*.[eE][xX][rR]
+*.[hH][dD][rR]
+*.[pP][sS][dD]
+*.[mM][pP]4
+*.[mM][oO][vV]
+*.[mM][kK][vV]
+*.[aA][vV][iI]
+*.[wW][eE][bB][mM]
+*.[oO][gG][vV]
+*.[mM][tT][sS]
+*.[mM]2[tT][sS]
+*.[mM]4[vV]
+*.[wW][mM][vV]
+*.[fF][lL][vV]
+*.[mM][pP][eE][gG]
+*.[mM][pP][gG]
+*.3[gG][pP]
 
 # local scripts
 scripts/*.png
@@ -204,8 +244,21 @@ sim2sim/real_g1/*.npy
 motion.npy
 datasettrain.sh
 
-# datasets
-dataset/
+# Keep the selected controller's validation and curriculum training datasets.
+dataset/*
+!dataset/wall_foot_reach/
+dataset/wall_foot_reach/*
+!dataset/wall_foot_reach/train/
+!dataset/wall_foot_reach/val/
+!dataset/unified_support/
+dataset/unified_support/*
+!dataset/unified_support/train/
+!dataset/unified_static_support/
+dataset/unified_static_support/*
+!dataset/unified_static_support/train/
+!dataset/unified_withdrawn_support/
+dataset/unified_withdrawn_support/*
+!dataset/unified_withdrawn_support/train/
 
 
 # Local reference-generation virtual environments
@@ -213,3 +266,4 @@ dataset/
 
 # Official SONIC models are downloaded from pinned upstream URLs with SHA-256 checks.
 deploy/mujoco_whole_body/sonic/*.onnx
+v2_finetune_final.pt

@@ -1,0 +1,18 @@
+# @package task
+defaults:
+  - /task/G1/G1_foot_pin_bimanual_v1
+  - _self_
+
+name: G1FootPinBimanualV2SequentialSupport
+max_episode_length: 470
+command:
+  dataset:
+    mem_paths: [foot_pin_bimanual_v2/train]
+reward:
+  tracking:
+    left_hand_distance: {weight: 8.0}
+    right_hand_distance: {weight: 12.0}
+  task:
+    early_left_support: {weight: 4.0}
+    right_hand_part_contact: {weight: 6.0}
+    bilateral_hand_contact: {weight: 6.0}

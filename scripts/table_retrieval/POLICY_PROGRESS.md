@@ -31,9 +31,8 @@
 12. 用原参考加上 1 s 双脚站立、先垂直抬脚再前伸的 3 s 前奏，生成 `table_retrieval_standing_prelude_liftfirst/train`。原策略稳定走完 10.2 s，先抬脚版本没有把物块向内误推。原直接关节姿态初态曾把物块推入桌内 11.4 cm，因此保留“先抬后前伸”过渡。
 13. 物块高 0.16 m、x=0.08 m、质量 0.12 kg 时，原训练策略从双脚站立出发，在约 4.9 s 把物块向外拨 41.3 cm、明确越过桌沿；但约 6 s 时手离桌、身体向 -Y 滑移跌倒。`artifacts/table_policy/eval_standing_tallblock/metrics.json`。质量 0.11 kg 类似；0.09 kg 能站稳但把物块向内推；0.03 kg 仅向外移 5 cm 后跌倒。手目标预载 +0.05 m、root 侧移 +0.03 m 可站稳，但物块仅移 2.7 cm。
 14. `stage3c_trained_motion` 修正奖励权重后完成 1,048,576 帧，但在站立高物块场景中仅稳定站立，把物块向内推 4.8 cm，不能直接迁移。基于原策略重新开始 `stage4_standing_tall`，训练完整站立过渡、真实高物块拨取及接触后平衡；阶段中期 checkpoint 正在按固定种子逐条回放。训练统计不作为成功证据。
+15. **第一任务成功**：`stage4_standing_tall` 第 225 轮，随机种子 42 的 32 条并行 Isaac 物理回放中第 25 条满足验收。物块向外移动 35.2 cm 并完全越过桌沿；10.2 s 全程 root 最低 0.764 m，左手扶桌 8.22 s，右脚承重 10.1 s，拨出瞬间左手仍有约 114 N 接触。视频 `artifacts/table_policy/table_retrieval_policy_success.mp4` 来自对应逐帧状态；完整细节在 `SUCCESS.md`。复制检查点到 `artifacts/table_policy/table_retrieval_policy.pt` 后复跑相同种子，仍是环境 25 唯一成功，位移 35.49 cm，物理求解造成的几毫米差异不改变结论。该结果是按用户允许 cherry-pick 的 **1/32**，不代表高成功率。
 
-## 后续检查
+## 剩余边界
 
-- 用训练 checkpoint 跑无自动复位的完整动力学 rollout，检查 root 高度、左手接触、右脚支撑、物块位移和收脚。
-- 若跟随失败，调整课程/参考姿态和 PPO 设定；若姿态成功但物块不移动，加入物块位移与左脚接触奖励。
-- 对成功 rollout 产出 MuJoCo 视频，并在指标中保留源 checkpoint 和原始状态轨迹。
+当前成功轨迹不包含走近桌子并建立首次手部支撑，也没有证明拨出物块后左脚落地；这两项属于后续扩展。已保存第 225 轮 checkpoint、完整 Isaac 自由基座物理 rollout、对应指标和 MuJoCo 可视化视频，复现步骤见 `SUCCESS.md`。

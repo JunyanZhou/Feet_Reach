@@ -1,0 +1,45 @@
+# @package task
+defaults:
+  - /task/G1/G1_bimanual_foot_pin_interface
+  - _self_
+
+name: G1FootPinBimanualV0
+num_envs: 128
+max_episode_length: 420
+randomize_episode_length: false
+objects:
+  # Initial left-hand support is kept while the arms move to the part.
+  - {type: box_static, name: support_rail, pos: [0.0, 0.275, 1.17], size: [1.0, 0.05, 0.34], color: [0.13, 0.17, 0.21], friction: 0.8}
+  - {type: box_dynamic, name: pin_base, pos: [0.42, 0.0, 0.4], size: [0.2, 0.3, 0.8], mass: 6.0, color: [0.15, 0.24, 0.28], friction: 1.0}
+  - {type: box_dynamic, name: extract_part, pos: [0.42, 0.0, 0.851], size: [0.16, 0.2, 0.1], mass: 0.2, color: [0.95, 0.38, 0.08], friction: 0.5}
+command:
+  anchor_init_prob: 1.0
+  disable_motion_finish: true
+  foot_force:
+    enabled: false
+  dataset:
+    mem_paths: [foot_pin_bimanual/train]
+    path_weights: [1.0]
+    sample_once: false
+    position_z_offset: 0.0
+    clamp_joint_targets: false
+    buffer_float_dtype: float32
+termination:
+  cum_error: {thres: 5.0, min_steps: 50}
+reward:
+  tracking:
+    swing_foot_tracking: {weight: 5.0}
+    support_foot_tracking: {weight: 4.0}
+    wall_hand_tracking: {weight: 4.0}
+    right_hand_tracking: {weight: 5.0}
+    root_pos_tracking: {weight: 4.0}
+    joint_pos_tracking: {weight: 0.7}
+  loco:
+    survival: {weight: 3.0}
+    action_rate_l2: {weight: 0.0001}
+  task:
+    pin_foot_contact: {weight: 2.0}
+    bilateral_hand_contact: {weight: 3.0}
+    base_stillness: {weight: 1.0}
+    part_outward_progress: {weight: 20.0}
+    part_extracted: {weight: 8.0}

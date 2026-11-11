@@ -1,0 +1,13 @@
+# @package task
+defaults:
+  - /task/G1/G1_foot_pin_bimanual_v2
+  - _self_
+
+name: G1FootPinBimanualV5MidBase
+objects:
+  - {type: box_static, name: support_rail, pos: [0.0, 0.275, 1.17], size: [1.0, 0.05, 0.34], color: [0.13, 0.17, 0.21], friction: 0.8}
+  - {type: box_dynamic, name: pin_base, pos: [0.465, 0.0, 0.33], size: [0.25, 0.3, 0.66], mass: 20.0, color: [0.15, 0.24, 0.28], friction: 1.2}
+  - {type: box_dynamic, name: extract_part, pos: [0.365, 0.0, 0.711], size: [0.16, 0.2, 0.1], mass: 0.2, color: [0.95, 0.38, 0.08], friction: 0.5}
+command:
+  base_initial_pos: [0.465, 0.0, 0.33]
+  base_half_x: 0.125

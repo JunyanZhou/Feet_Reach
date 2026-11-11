@@ -1,0 +1,14 @@
+# @package task
+defaults:
+  - /task/G1/G1_unified_support_reach_v2
+  - _self_
+
+name: G1BimanualFootPinInterface
+command:
+  _target_: active_adaptation.envs.mdp.commands.bimanual_foot_pin.BimanualFootPinCommand
+observation:
+  policy:
+    target_right_hand_pos_b: {}
+reward:
+  tracking:
+    right_hand_tracking: {weight: 2.0}

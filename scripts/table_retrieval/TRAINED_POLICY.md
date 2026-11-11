@@ -1,5 +1,7 @@
 # 0.77 m 桌面：训练策略扶桌脚拨物块
 
+只想查看演示和方法总结，可直接下载[视频与中文说明 ZIP](../../artifacts/table_policy/table_supported_foot_retrieval_demo.zip)。包内只有一条成功视频和一份独立说明文档。
+
 这是当前可复现的**自由基座 Isaac 物理结果**。机器人从靠近桌面的姿态开始，左手接触桌面并承受向上支撑力，右脚承重，左脚伸入桌下把物块向外拨出。右手没有目标点。控制回路中没有运动学搬运机器人根部或物块；MuJoCo EGL 只把已记录的 Isaac 状态渲染成视频。
 
 与仓库中更早的 [`README.md`](README.md) 脚本/IK 演示，以及 [`SUCCESS.md`](SUCCESS.md) 的较高桌面 1/32 策略结果不同，本页记录的是正常高度桌面、经过三个独立种子检验的组合控制器。完整的逐项尝试和失败原因见 [`LOW_TABLE_PROGRESS.md`](LOW_TABLE_PROGRESS.md)，全部 78 次批量评估及其原始 JSON 见 [`EVALUATION_LEDGER.md`](EVALUATION_LEDGER.md)。

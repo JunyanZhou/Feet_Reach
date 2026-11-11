@@ -1,0 +1,9 @@
+# @package task
+defaults:
+  - /task/G1/G1_table_retrieval
+  - _self_
+
+name: G1TableRetrievalStable
+command:
+  dataset:
+    mem_paths: [table_retrieval_stable/train]

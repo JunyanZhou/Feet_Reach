@@ -360,7 +360,9 @@ class _Env(EnvBase):
             self._reset_idx(env_ids)
 
         # reset episode length buffer
-        if env_ids.numel() < self.num_envs * 0.2:
+        if not self.cfg.get("randomize_episode_length", True):
+            self.episode_length_buf[env_ids] = 0
+        elif env_ids.numel() < self.num_envs * 0.2:
             self.episode_length_buf[env_ids] = torch.randint(0, self.max_episode_length // 5, (env_ids.numel(),), device=self.device)
         else:
             self.episode_length_buf[env_ids] = torch.randint(0, self.max_episode_length, (env_ids.numel(),), device=self.device)

@@ -1,0 +1,10 @@
+# @package task
+defaults:
+  - /task/G1/G1_table_retrieval_trained_motion
+  - _self_
+
+name: G1TableRetrievalStandingPrelude
+max_episode_length: 550
+command:
+  dataset:
+    mem_paths: [table_retrieval_standing_prelude/train]

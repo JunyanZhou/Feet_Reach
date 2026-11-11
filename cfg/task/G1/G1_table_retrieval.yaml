@@ -1,0 +1,31 @@
+# @package task
+defaults:
+  - /task/G1/G1_unified_support_reach_v2
+  - _self_
+
+name: G1TableRetrieval
+num_envs: 128
+max_episode_length: 900
+randomize_episode_length: false
+objects:
+  # Match the table-retrieval motion reference. Box sizes are full extents.
+  - {type: box_static, name: table_top, pos: [0.78, 0.0, 0.745], size: [1.0, 1.06, 0.05], color: [0.58, 0.38, 0.21], friction: 0.8}
+  - {type: box_static, name: table_leg_fl, pos: [0.35, 0.46, 0.36], size: [0.05, 0.05, 0.72], color: [0.13, 0.17, 0.21]}
+  - {type: box_static, name: table_leg_fr, pos: [0.35, -0.46, 0.36], size: [0.05, 0.05, 0.72], color: [0.13, 0.17, 0.21]}
+  - {type: box_static, name: table_leg_bl, pos: [1.21, 0.46, 0.36], size: [0.05, 0.05, 0.72], color: [0.13, 0.17, 0.21]}
+  - {type: box_static, name: table_leg_br, pos: [1.21, -0.46, 0.36], size: [0.05, 0.05, 0.72], color: [0.13, 0.17, 0.21]}
+  - {type: box_dynamic, name: target_object, pos: [0.445, 0.12, 0.041], size: [0.09, 0.09, 0.08], mass: 0.22, color: [1.0, 0.38, 0.055], friction: 0.55}
+command:
+  anchor_init_prob: 1.0
+  disable_motion_finish: true
+  foot_force:
+    enabled: false
+  dataset:
+    mem_paths: [table_retrieval/train]
+    path_weights: [1.0]
+    sample_once: false
+    position_z_offset: 0.0
+    clamp_joint_targets: false
+    buffer_float_dtype: float32
+termination:
+  cum_error: {thres: 5.0, min_steps: 50}

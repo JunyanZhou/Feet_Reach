@@ -1,0 +1,36 @@
+# @package task
+defaults:
+  - /task/G1/G1_unified_support_reach_v2
+  - _self_
+
+name: G1TableRetrievalTrainedMotion
+num_envs: 128
+max_episode_length: 380
+randomize_episode_length: false
+# The trained policy begins with its left hand on a side rail of a high table
+# and its left foot raised. The cabinet-like under-table cavity is open at X<-.1.
+retrieval_boundary_x: -0.1
+object_half_x: 0.03
+require_foot_recovery: false
+objects:
+  - {type: box_static, name: table_top, pos: [0.3, 0.45, 1.34], size: [0.8, 0.5, 0.05], color: [0.58, 0.38, 0.21], friction: 0.8}
+  - {type: box_static, name: table_top_extension, pos: [0.3, 0.10, 1.34], size: [0.8, 0.2, 0.05], color: [0.58, 0.38, 0.21], friction: 0.8}
+  - {type: box_static, name: table_side_apron, pos: [0.0, 0.275, 1.17], size: [1.0, 0.05, 0.34], color: [0.13, 0.17, 0.21], friction: 0.8}
+  - {type: box_static, name: table_front_support, pos: [0.0, 0.30, 0.5], size: [0.07, 0.07, 1.0], color: [0.13, 0.17, 0.21], friction: 0.8}
+  - {type: box_static, name: table_back_support, pos: [0.69, 0.30, 0.62], size: [0.05, 0.1, 1.24], color: [0.13, 0.17, 0.21]}
+  - {type: box_static, name: table_far_support, pos: [0.69, 0.65, 0.62], size: [0.05, 0.05, 1.24], color: [0.13, 0.17, 0.21]}
+  - {type: box_dynamic, name: target_object, pos: [0.02, 0.09, 0.055], size: [0.06, 0.06, 0.11], mass: 0.12, color: [1.0, 0.38, 0.055], friction: 0.01}
+command:
+  anchor_init_prob: 1.0
+  disable_motion_finish: true
+  foot_force:
+    enabled: false
+  dataset:
+    mem_paths: [table_retrieval_trained_motion/train]
+    path_weights: [1.0]
+    sample_once: false
+    position_z_offset: 0.0
+    clamp_joint_targets: false
+    buffer_float_dtype: float32
+termination:
+  cum_error: {thres: 2.0, min_steps: 50}

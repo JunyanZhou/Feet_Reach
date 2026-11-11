@@ -1,0 +1,27 @@
+# @package task
+defaults:
+  - /task/G1/G1_table_retrieval_trained_motion
+  - _self_
+
+name: G1TableRetrievalTrainedMotionRL
+command:
+  _target_: active_adaptation.envs.mdp.commands.table_retrieval.TableRetrievalCommand
+  hand_support_window: [0.0, 7.2]
+  stance_window: [0.0, 7.2]
+  progress_window: [0.8, 3.2]
+  retrieved_start: 2.0
+reward:
+  tracking:
+    swing_foot_tracking: {weight: 7.0}
+    support_foot_tracking: {weight: 4.0}
+    wall_hand_tracking: {weight: 5.0}
+    root_pos_tracking: {weight: 4.0}
+    joint_pos_tracking: {weight: 1.0}
+  loco:
+    survival: {weight: 3.0}
+    action_rate_l2: {weight: 0.0001}
+  task:
+    table_hand_support: {weight: 3.0}
+    right_stance_load: {weight: 3.0}
+    object_outward_progress: {weight: 20.0}
+    object_retrieved: {weight: 10.0}

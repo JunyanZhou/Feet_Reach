@@ -1,0 +1,24 @@
+# @package task
+defaults:
+  - /task/G1/G1_table_retrieval_easy
+  - _self_
+
+name: G1TableRetrievalEasyRL
+command:
+  _target_: active_adaptation.envs.mdp.commands.table_retrieval.TableRetrievalCommand
+reward:
+  tracking:
+    swing_foot_tracking: {weight: 12.0}
+    support_foot_tracking: {weight: 8.0}
+    wall_hand_tracking: {weight: 5.0}
+    root_pos_tracking: {weight: 4.0}
+    joint_pos_tracking: {weight: 0.5}
+    joint_vel_tracking: {weight: 0.1}
+  loco:
+    survival: {weight: 2.0}
+    action_rate_l2: {weight: 0.3}
+  task:
+    table_hand_support: {weight: 5.0}
+    right_stance_load: {weight: 6.0}
+    object_outward_progress: {weight: 10.0}
+    object_retrieved: {weight: 5.0}

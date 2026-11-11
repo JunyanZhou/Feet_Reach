@@ -1,0 +1,29 @@
+{
+  "checkpoint": "/root/Feet_Reach/artifacts/table_policy/stage3c_trained_motion/wandb/offline-run-20261111_062127-lkm3penn/files/checkpoint_final.pt",
+  "control": "policy",
+  "action_clip": null,
+  "foot_retract_extra_m": 0.0,
+  "object_setup": {
+    "x": 0.08,
+    "y": null,
+    "height": 0.16,
+    "mass": 0.12,
+    "friction": 0.1
+  },
+  "steps": 510,
+  "duration_s": 10.18,
+  "object_initial_x_m": 0.08019988238811493,
+  "object_final_x_m": 0.12799623608589172,
+  "object_outward_displacement_m": -0.047796353697776794,
+  "object_outside_table": false,
+  "retrieval_boundary_x_m": -0.1,
+  "root_min_height_m": 0.7635287642478943,
+  "hand_force_peak_N": 194.41781616210938,
+  "hand_force_mean_N": 44.823184967041016,
+  "hand_support_duration_s": 8.48,
+  "right_foot_force_mean_N": 446.63946533203125,
+  "right_stance_duration_s": 10.120000000000001,
+  "recovered_stance": false,
+  "stable_completion": true,
+  "task_success": false
+}

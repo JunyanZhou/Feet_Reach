@@ -1,0 +1,26 @@
+[
+  {
+    "generation": 0,
+    "best_score": 3.6699461936950684,
+    "generation_score": 3.6699461936950684,
+    "generation_object_outward_m": 8.940696716308594e-07,
+    "generation_object_inward_peak_m": 0.0,
+    "generation_foot_best_x_m": 0.11236083507537842,
+    "generation_foot_behind_score": 0.0,
+    "generation_root_min_m": 0.5543676614761353,
+    "population_stable": 3,
+    "population_retrieved": 0
+  },
+  {
+    "generation": 1,
+    "best_score": 3.8592565059661865,
+    "generation_score": 3.8592565059661865,
+    "generation_object_outward_m": 0.0,
+    "generation_object_inward_peak_m": 0.0,
+    "generation_foot_best_x_m": 0.14642000198364258,
+    "generation_foot_behind_score": 0.0,
+    "generation_root_min_m": 0.5916978120803833,
+    "population_stable": 5,
+    "population_retrieved": 0
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "generation": 0,
+    "best_group_score": 42.92555236816406,
+    "generation_group_score": 42.92555236816406,
+    "group_best_center_out": 0,
+    "group_best_full_out": 0,
+    "group_best_valid": 4,
+    "population_center_out_valid": 2,
+    "population_full_out_valid": 2,
+    "representative_outward_m": 0.058104515075683594,
+    "representative_root_min_m": 0.5479364395141602
+  },
+  {
+    "generation": 1,
+    "best_group_score": 54.96949768066406,
+    "generation_group_score": 54.96949768066406,
+    "group_best_center_out": 2,
+    "group_best_full_out": 2,
+    "group_best_valid": 4,
+    "population_center_out_valid": 5,
+    "population_full_out_valid": 2,
+    "representative_outward_m": 0.0,
+    "representative_root_min_m": 0.546775758266449
+  },
+  {
+    "generation": 2,
+    "best_group_score": 54.96949768066406,
+    "generation_group_score": 11.894457817077637,
+    "group_best_center_out": 1,
+    "group_best_full_out": 0,
+    "group_best_valid": 4,
+    "population_center_out_valid": 3,
+    "population_full_out_valid": 0,
+    "representative_outward_m": 0.0,
+    "representative_root_min_m": 0.5399609804153442
+  },
+  {
+    "generation": 3,
+    "best_group_score": 54.96949768066406,
+    "generation_group_score": 8.836833953857422,
+    "group_best_center_out": 1,
+    "group_best_full_out": 0,
+    "group_best_valid": 4,
+    "population_center_out_valid": 2,
+    "population_full_out_valid": 0,
+    "representative_outward_m": -2.384185791015625e-07,
+    "representative_root_min_m": 0.5333103537559509
+  },
+  {
+    "generation": 4,
+    "best_group_score": 54.96949768066406,
+    "generation_group_score": 47.72810363769531,
+    "group_best_center_out": 2,
+    "group_best_full_out": 2,
+    "group_best_valid": 4,
+    "population_center_out_valid": 6,
+    "population_full_out_valid": 2,
+    "representative_outward_m": -1.1920928955078125e-06,
+    "representative_root_min_m": 0.5518643856048584
+  },
+  {
+    "generation": 5,
+    "best_group_score": 54.96949768066406,
+    "generation_group_score": 49.770774841308594,
+    "group_best_center_out": 2,
+    "group_best_full_out": 2,
+    "group_best_valid": 4,
+    "population_center_out_valid": 4,
+    "population_full_out_valid": 2,
+    "representative_outward_m": 0.0,
+    "representative_root_min_m": 0.552318274974823
+  },
+  {
+    "generation": 6,
+    "best_group_score": 54.96949768066406,
+    "generation_group_score": 8.987733840942383,
+    "group_best_center_out": 1,
+    "group_best_full_out": 0,
+    "group_best_valid": 4,
+    "population_center_out_valid": 5,
+    "population_full_out_valid": 0,
+    "representative_outward_m": -2.384185791015625e-07,
+    "representative_root_min_m": 0.5499117374420166
+  }
+]

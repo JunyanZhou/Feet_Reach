@@ -1,0 +1,62 @@
+{
+  "teacher_checkpoint": "/root/Feet_Reach/artifacts/table_policy/supported_bootstrap_dagger/dagger_2.pt",
+  "residual_json": "/root/Feet_Reach/artifacts/table_policy/small_block_cem_final/candidate_gen10.json",
+  "teacher_center_crossing": 39,
+  "teacher_num_envs": 64,
+  "selected_samples": 17550,
+  "selected_mean_outward_m": 0.08026356995105743,
+  "fit_losses": [
+    [
+      0,
+      0.08762185275554657
+    ],
+    [
+      100,
+      0.013215073384344578
+    ],
+    [
+      200,
+      0.004516038578003645
+    ],
+    [
+      300,
+      0.002675860421732068
+    ],
+    [
+      400,
+      0.0019438376184552908
+    ],
+    [
+      500,
+      0.0015379716642200947
+    ],
+    [
+      600,
+      0.0016039727488532662
+    ],
+    [
+      700,
+      0.0013172684703022242
+    ],
+    [
+      800,
+      0.0012796238297596574
+    ],
+    [
+      900,
+      0.000975811097305268
+    ],
+    [
+      1000,
+      0.0007719896384514868
+    ],
+    [
+      1100,
+      0.0012049429351463914
+    ],
+    [
+      1199,
+      0.0008921542321331799
+    ]
+  ]
+}

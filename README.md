@@ -117,3 +117,7 @@ bash scripts/eval_wall_foot_reach.sh \
 Frozen-CEER 两层 proactive EE residual：high-level 输出左手 xyz residual，接入 PointNet 点云，使用 proactive EE 轨迹；去掉全身 tracking reward，保留 EE、力增长率和 locomotion 奖励。运行 `bash scripts/train_proactive_residual_pipeline.sh`，仅 teacher → adapt 两阶段，默认八卡、每卡 4096 环境。详见 [配置与验证说明](scripts/references/README_proactive_residual.md)。
 
 Gentle-contact A/B 实验：A 使用接触前减速、接触任务奖励、冲量和平滑项；B 额外加入初始接触力增长率及峰值惩罚。分别运行 `GENTLE_VARIANT=A` / `B` 配合 `bash scripts/train_gentle_contact_pipeline.sh`，默认前四卡 / 后四卡。见 [实验配置与 reward 定义](scripts/references/README_gentle_contact.md)。
+
+## 扶桌脚拨物块训练策略（0.77 m 桌面）
+
+当前可复现的 Isaac 自由基座物理结果、最终权重与残差、成功视频和复现命令见 [训练策略说明](scripts/table_retrieval/TRAINED_POLICY.md)。三个独立种子的严格完整离桌为 15/96；物块前沿仅在桌沿内侧 5 mm，更深摆位尚未成功。[详细试验记录](scripts/table_retrieval/LOW_TABLE_PROGRESS.md)记录参数、效果和失败原因，[78 次批量评估台账](scripts/table_retrieval/EVALUATION_LEDGER.md)链接全部原始逐轨迹指标。

@@ -1,0 +1,65 @@
+{
+  "teacher_checkpoint": "/root/Feet_Reach/artifacts/table_policy/supported_bootstrap_dagger/dagger_2.pt",
+  "residual_json": "/root/Feet_Reach/artifacts/table_policy/small_block_cem_final/candidate_gen10.json",
+  "teacher_center_crossing": 41,
+  "teacher_num_envs": 64,
+  "selected_samples": 45358,
+  "teacher_samples": 18450,
+  "student_samples": 26908,
+  "student_checkpoint": "/root/Feet_Reach/artifacts/table_policy/small_block_distilled/distilled_1200.pt",
+  "selected_mean_outward_m": 0.08568225800991058,
+  "fit_losses": [
+    [
+      0,
+      0.087356798350811
+    ],
+    [
+      100,
+      0.03123551607131958
+    ],
+    [
+      200,
+      0.01766003482043743
+    ],
+    [
+      300,
+      0.014310603030025959
+    ],
+    [
+      400,
+      0.010562876239418983
+    ],
+    [
+      500,
+      0.0128118135035038
+    ],
+    [
+      600,
+      0.008364913053810596
+    ],
+    [
+      700,
+      0.007609984837472439
+    ],
+    [
+      800,
+      0.009329169988632202
+    ],
+    [
+      900,
+      0.00635540671646595
+    ],
+    [
+      1000,
+      0.006389865651726723
+    ],
+    [
+      1100,
+      0.005947818048298359
+    ],
+    [
+      1199,
+      0.007792220916599035
+    ]
+  ]
+}

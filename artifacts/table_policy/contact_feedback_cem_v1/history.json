@@ -1,0 +1,74 @@
+[
+  {
+    "generation": 0,
+    "best_group_score": 63.07331085205078,
+    "generation_group_score": 63.07331085205078,
+    "group_best_center_out": 1,
+    "group_best_full_out": 1,
+    "group_best_valid": 4,
+    "population_center_out_valid": 3,
+    "population_full_out_valid": 1,
+    "representative_outward_m": 0.12804269790649414,
+    "representative_root_min_m": 0.5493743419647217
+  },
+  {
+    "generation": 1,
+    "best_group_score": 63.07331085205078,
+    "generation_group_score": 24.45379638671875,
+    "group_best_center_out": 0,
+    "group_best_full_out": 0,
+    "group_best_valid": 4,
+    "population_center_out_valid": 4,
+    "population_full_out_valid": 1,
+    "representative_outward_m": 0.06213665008544922,
+    "representative_root_min_m": 0.5510941743850708
+  },
+  {
+    "generation": 2,
+    "best_group_score": 63.07331085205078,
+    "generation_group_score": 33.11334991455078,
+    "group_best_center_out": 1,
+    "group_best_full_out": 1,
+    "group_best_valid": 4,
+    "population_center_out_valid": 3,
+    "population_full_out_valid": 1,
+    "representative_outward_m": 0.0,
+    "representative_root_min_m": 0.5518284440040588
+  },
+  {
+    "generation": 3,
+    "best_group_score": 63.07331085205078,
+    "generation_group_score": 35.97231674194336,
+    "group_best_center_out": 1,
+    "group_best_full_out": 1,
+    "group_best_valid": 4,
+    "population_center_out_valid": 4,
+    "population_full_out_valid": 1,
+    "representative_outward_m": 0.0,
+    "representative_root_min_m": 0.550920844078064
+  },
+  {
+    "generation": 4,
+    "best_group_score": 63.07331085205078,
+    "generation_group_score": 35.88075637817383,
+    "group_best_center_out": 1,
+    "group_best_full_out": 1,
+    "group_best_valid": 4,
+    "population_center_out_valid": 4,
+    "population_full_out_valid": 1,
+    "representative_outward_m": 0.0,
+    "representative_root_min_m": 0.5431191921234131
+  },
+  {
+    "generation": 5,
+    "best_group_score": 63.07331085205078,
+    "generation_group_score": 15.746994972229004,
+    "group_best_center_out": 1,
+    "group_best_full_out": 0,
+    "group_best_valid": 4,
+    "population_center_out_valid": 4,
+    "population_full_out_valid": 1,
+    "representative_outward_m": -5.960464477539063e-08,
+    "representative_root_min_m": 0.5405122637748718
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "checkpoint": "/root/Feet_Reach/artifacts/table_policy/stage4_standing_tall/wandb/offline-run-20261111_063325-dmv21i04/files/checkpoint_50.pt",
+  "control": "policy",
+  "action_clip": null,
+  "foot_retract_extra_m": 0.0,
+  "hand_preload_y_m": 0.0,
+  "root_shift_y_m": 0.0,
+  "object_setup": {
+    "x": null,
+    "y": null,
+    "height": null,
+    "mass": null,
+    "friction": null
+  },
+  "steps": 510,
+  "duration_s": 10.18,
+  "object_initial_x_m": 0.08019988238811493,
+  "object_final_x_m": 0.06170147657394409,
+  "object_outward_displacement_m": 0.018498405814170837,
+  "object_outside_table": false,
+  "retrieval_boundary_x_m": -0.1,
+  "root_min_height_m": 0.7648162841796875,
+  "hand_force_peak_N": 450.98046875,
+  "hand_force_mean_N": 44.05562973022461,
+  "hand_support_duration_s": 8.2,
+  "right_foot_force_mean_N": 442.00299072265625,
+  "right_stance_duration_s": 10.120000000000001,
+  "recovered_stance": false,
+  "stable_completion": true,
+  "task_success": false
+}

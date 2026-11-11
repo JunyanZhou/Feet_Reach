@@ -1,0 +1,16 @@
+{
+  "checkpoint": "/root/Feet_Reach/artifacts/table_policy/stage2_easy_rl/wandb/offline-run-20261111_055133-od0wqzvm/files/checkpoint_50.pt",
+  "control": "policy",
+  "steps": 41,
+  "duration_s": 0.8,
+  "object_initial_x_m": 0.34999990463256836,
+  "object_final_x_m": 0.34999987483024597,
+  "object_outward_displacement_m": 2.9802322387695312e-08,
+  "object_outside_table": false,
+  "root_min_height_m": 0.3699643909931183,
+  "hand_force_peak_N": 0.0,
+  "hand_force_mean_N": 0.0,
+  "right_foot_force_mean_N": 150.1509552001953,
+  "recovered_stance": false,
+  "task_success": false
+}

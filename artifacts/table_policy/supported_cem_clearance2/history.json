@@ -1,0 +1,30 @@
+[
+  {
+    "generation": 0,
+    "best_score": 17.87001609802246,
+    "generation_score": 17.87001609802246,
+    "generation_object_outward_m": 7.152557373046875e-07,
+    "generation_object_inward_peak_m": 0.013509750366210938,
+    "generation_foot_best_x_m": 0.5783488750457764,
+    "generation_lifted_fraction": 0.0,
+    "generation_clearance_fraction": 0.0,
+    "generation_foot_behind_score": 0.5846083164215088,
+    "generation_root_min_m": 0.5027137398719788,
+    "population_stable": 13,
+    "population_retrieved": 0
+  },
+  {
+    "generation": 1,
+    "best_score": 17.87001609802246,
+    "generation_score": 7.852322101593018,
+    "generation_object_outward_m": 0.0,
+    "generation_object_inward_peak_m": 0.03777313232421875,
+    "generation_foot_best_x_m": 0.35053062438964844,
+    "generation_lifted_fraction": 0.03655049204826355,
+    "generation_clearance_fraction": 0.0,
+    "generation_foot_behind_score": 0.3181089758872986,
+    "generation_root_min_m": 0.5451860427856445,
+    "population_stable": 17,
+    "population_retrieved": 0
+  }
+]

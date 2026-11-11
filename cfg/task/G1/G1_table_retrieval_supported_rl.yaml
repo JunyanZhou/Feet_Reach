@@ -1,0 +1,42 @@
+# @package task
+defaults:
+  - /task/G1/G1_table_retrieval_easy_rl
+  - _self_
+
+name: G1TableRetrievalSupportedRL
+num_envs: 512
+max_episode_length: 550
+randomize_episode_length: false
+retrieval_boundary_x: 0.28
+object_half_x: 0.045
+command:
+  anchor_init_prob: 1.0
+  disable_motion_finish: true
+  require_supported_progress: true
+  hand_target_down_m: 0.03
+  hand_support_window: [0.0, 11.0]
+  stance_window: [0.0, 11.0]
+  progress_window: [4.0, 9.0]
+  retrieved_start: 7.0
+  dataset:
+    mem_paths: [table_retrieval_supported/train]
+reward:
+  tracking:
+    swing_foot_tracking: {weight: 9.0}
+    support_foot_tracking: {weight: 6.0}
+    wall_hand_tracking: {weight: 7.0}
+    root_pos_tracking: {weight: 5.0}
+    joint_pos_tracking: {weight: 0.25}
+    joint_vel_tracking: {weight: 0.05}
+  loco:
+    action_rate_l2: {weight: 0.0001}
+  task:
+    swing_foot_distance: {weight: 12.0}
+    table_hand_support: {weight: 5.0}
+    right_stance_load: {weight: 4.0}
+    object_outward_progress: {weight: 25.0}
+    object_retrieved: {weight: 8.0}
+termination:
+  cum_error: {thres: 5.0, min_steps: 50}
+  root_height_below: {min_height: 0.50}
+  fall_over: {xy_thres: 0.85, z_thres: 0.40}

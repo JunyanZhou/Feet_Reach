@@ -1,0 +1,62 @@
+{
+  "source_checkpoint": "/root/Feet_Reach/artifacts/table_policy/supported_bootstrap_dagger/dagger_2.pt",
+  "joint_names": [
+    "left_hip_pitch_joint",
+    "left_hip_roll_joint",
+    "left_knee_joint",
+    "left_ankle_pitch_joint"
+  ],
+  "phase_times_s": [
+    1.5,
+    4.2,
+    3.5,
+    5.6
+  ],
+  "parameters": [
+    [
+      0.16541962325572968,
+      -0.1569947749376297,
+      -0.3574391007423401,
+      -0.7754395008087158
+    ],
+    [
+      -0.3058018088340759,
+      0.350051611661911,
+      -0.44302690029144287,
+      0.5153508186340332
+    ],
+    [
+      -0.6288173198699951,
+      -0.5700221061706543,
+      -0.7686492204666138,
+      -0.022584378719329834
+    ],
+    [
+      0.3993433117866516,
+      0.3571428954601288,
+      0.020185008645057678,
+      0.7441973686218262
+    ],
+    [
+      0.682677149772644,
+      0.6428570747375488,
+      -0.5048704743385315,
+      -0.9200320243835449
+    ]
+  ],
+  "score": 37.692962646484375,
+  "generation": 0,
+  "object_outward_m": 0.020332932472229004,
+  "object_final_outward_m": 0.01960575580596924,
+  "object_inward_peak_m": 0.0,
+  "foot_best_x_m": 0.4042699337005615,
+  "safe_foot_best_x_m": 0.3984031677246094,
+  "foot_best_z_m": 0.11718325316905975,
+  "lifted_fraction": 0.0038991698529571295,
+  "clearance_fraction": 0.0,
+  "foot_behind_score": 0.4666409492492676,
+  "root_min_height_m": 0.5456181764602661,
+  "support_duration_s": 8.679999351501465,
+  "foot_pull_motion_m": 0.04053354263305664,
+  "supported_push_duration_s": 0.19999998807907104
+}

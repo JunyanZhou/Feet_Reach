@@ -1,0 +1,21 @@
+{
+  "checkpoint": "/root/Feet_Reach/artifacts/unified_support_reach/v2_goal_offset_x10.pt",
+  "control": "policy",
+  "action_clip": null,
+  "steps": 360,
+  "duration_s": 7.18,
+  "object_initial_x_m": 0.0207574050873518,
+  "object_final_x_m": -0.05107498541474342,
+  "object_outward_displacement_m": 0.07183239050209522,
+  "object_outside_table": false,
+  "retrieval_boundary_x_m": -0.1,
+  "root_min_height_m": 0.7680115699768066,
+  "hand_force_peak_N": 91.73794555664062,
+  "hand_force_mean_N": 55.11598205566406,
+  "hand_support_duration_s": 7.18,
+  "right_foot_force_mean_N": 477.0483093261719,
+  "right_stance_duration_s": 7.2,
+  "recovered_stance": false,
+  "stable_completion": true,
+  "task_success": false
+}

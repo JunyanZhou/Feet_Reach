@@ -1,0 +1,42 @@
+{
+  "source_checkpoint": "/root/Feet_Reach/artifacts/table_policy/supported_bootstrap_dagger/dagger_2.pt",
+  "joint_names": [
+    "left_hip_pitch_joint",
+    "left_hip_roll_joint",
+    "left_knee_joint",
+    "left_ankle_pitch_joint"
+  ],
+  "phase_times_s": [
+    1.5,
+    4.2
+  ],
+  "parameters": [
+    [
+      0.03559626638889313,
+      -0.2830500602722168,
+      -0.2403266727924347,
+      -0.8906407356262207
+    ],
+    [
+      -0.581430971622467,
+      0.29529643058776855,
+      -0.20821073651313782,
+      0.9918311238288879
+    ],
+    [
+      -0.11378570646047592,
+      -1.3518842458724976,
+      -0.092532217502594,
+      0.5108059644699097
+    ]
+  ],
+  "score": 8.628645896911621,
+  "generation": 1,
+  "object_outward_m": 0.0,
+  "foot_best_x_m": 0.45122432708740234,
+  "foot_best_z_m": 0.11770116537809372,
+  "foot_behind_score": 0.5282072424888611,
+  "root_min_height_m": 0.5008991956710815,
+  "support_duration_s": 4.900000095367432,
+  "supported_push_duration_s": 0.0
+}

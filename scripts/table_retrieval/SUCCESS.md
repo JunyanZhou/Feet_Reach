@@ -1,5 +1,7 @@
 # 第一任务：扶桌脚拨物块（物理回放）
 
+> 历史结果：本页记录较高桌面场景的 1/32 成功。当前 0.77 m 桌面及三种子独立评估结果见 [TRAINED_POLICY.md](TRAINED_POLICY.md)，详细试验记录见 [LOW_TABLE_PROGRESS.md](LOW_TABLE_PROGRESS.md)。
+
 ## 成功记录
 
 - 策略：`artifacts/table_policy/table_retrieval_policy.pt`（`stage4_standing_tall` 第 225 轮）

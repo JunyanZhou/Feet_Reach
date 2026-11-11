@@ -1,0 +1,35 @@
+[
+  {
+    "generation": 0,
+    "best_score": 8.501825332641602,
+    "generation_score": 8.501825332641602,
+    "generation_object_outward_m": 9.5367431640625e-07,
+    "generation_foot_best_x_m": 0.44941043853759766,
+    "generation_foot_behind_score": 0.5107419490814209,
+    "generation_root_min_m": 0.5007069110870361,
+    "population_stable": 6,
+    "population_retrieved": 1
+  },
+  {
+    "generation": 1,
+    "best_score": 8.628645896911621,
+    "generation_score": 8.628645896911621,
+    "generation_object_outward_m": 0.0,
+    "generation_foot_best_x_m": 0.45122432708740234,
+    "generation_foot_behind_score": 0.5282072424888611,
+    "generation_root_min_m": 0.5008991956710815,
+    "population_stable": 15,
+    "population_retrieved": 0
+  },
+  {
+    "generation": 2,
+    "best_score": 8.628645896911621,
+    "generation_score": 7.427635192871094,
+    "generation_object_outward_m": 0.0,
+    "generation_foot_best_x_m": 0.33448266983032227,
+    "generation_foot_behind_score": 0.38104361295700073,
+    "generation_root_min_m": 0.5595019459724426,
+    "population_stable": 31,
+    "population_retrieved": 0
+  }
+]

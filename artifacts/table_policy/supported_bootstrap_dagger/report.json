@@ -1,0 +1,40 @@
+{
+  "source_checkpoint": "/root/Feet_Reach/artifacts/table_policy/supported_bootstrap/bc_expert.pt",
+  "rollouts": [
+    {
+      "student": false,
+      "steps": 400,
+      "root_min_m": 0.5339735746383667,
+      "object_outward_m": 6.854534149169922e-07
+    },
+    {
+      "student": true,
+      "steps": 250,
+      "root_min_m": 0.5336092710494995,
+      "object_outward_m": -2.9802322387695312e-08
+    },
+    {
+      "student": true,
+      "steps": 250,
+      "root_min_m": 0.5364269614219666,
+      "object_outward_m": 2.9802322387695312e-08
+    }
+  ],
+  "fits": [
+    {
+      "stage": "bc_expert",
+      "checkpoint": "artifacts/table_policy/supported_bootstrap_dagger/bc_expert.pt",
+      "loss": 0.0010477942414581776
+    },
+    {
+      "stage": "dagger_1",
+      "checkpoint": "artifacts/table_policy/supported_bootstrap_dagger/dagger_1.pt",
+      "loss": 0.0006692569004371762
+    },
+    {
+      "stage": "dagger_2",
+      "checkpoint": "artifacts/table_policy/supported_bootstrap_dagger/dagger_2.pt",
+      "loss": 0.0006513172993436456
+    }
+  ]
+}

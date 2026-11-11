@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parents[2]
 MODEL = ROOT / "deploy/mujoco_whole_body/g1/g1_29dof_rev_1_0.xml"
 
 
-def make_model(scene="original", object_height=None):
+def make_model(scene="original", object_height=None, object_width_y=None, object_width_x=None):
     xml = ET.parse(MODEL)
     xml.find("compiler").set("meshdir", str((MODEL.parent / "meshes").resolve()))
     world = xml.find("worldbody")
@@ -45,7 +45,7 @@ def make_model(scene="original", object_height=None):
         box("retrieval_zone", (.135,.12,.001), (.105,.12,.001), ".15 .62 .51 .55")
         height = object_height if object_height is not None else .08
         obj = ET.SubElement(world, "body", name="target_object", pos=f".445 .12 {height/2:.6g}")
-        object_size = f".045 .045 {height/2:.6g}"
+        object_size = f"{(object_width_x or .09)/2:.6g} {(object_width_y or .09)/2:.6g} {height/2:.6g}"
     ET.SubElement(obj, "freejoint", name="target_object_free")
     ET.SubElement(obj, "geom", name="target_object_geom", type="box",
                   size=object_size, mass=".22", rgba="1 .38 .055 1",
@@ -62,13 +62,15 @@ def main():
     p.add_argument("--height", type=int, default=720)
     p.add_argument("--scene", choices=("original", "trained_motion"), default="original")
     p.add_argument("--object-height", type=float, default=None)
+    p.add_argument("--object-width-y", type=float, default=None)
+    p.add_argument("--object-width-x", type=float, default=None)
     p.add_argument("--still-at", type=float, default=None, help="Save a PNG at one time instead of a video")
     p.add_argument("--azimuth", type=float, default=315)
     p.add_argument("--elevation", type=float, default=-18)
     p.add_argument("--distance", type=float, default=None)
     args = p.parse_args()
     rollout = np.load(args.rollout, allow_pickle=False)
-    model = make_model(args.scene, args.object_height)
+    model = make_model(args.scene, args.object_height, args.object_width_y, args.object_width_x)
     model.vis.global_.offwidth = args.width
     model.vis.global_.offheight = args.height
     data = mujoco.MjData(model)

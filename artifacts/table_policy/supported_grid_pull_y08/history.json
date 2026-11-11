@@ -1,0 +1,20 @@
+[
+  {
+    "generation": 0,
+    "best_score": 37.36793899536133,
+    "generation_score": 37.36793899536133,
+    "generation_object_outward_m": 0.01943349838256836,
+    "generation_object_inward_peak_m": 0.0,
+    "generation_foot_best_x_m": 0.41289377212524414,
+    "generation_safe_foot_best_x_m": 0.41036224365234375,
+    "generation_lifted_fraction": 0.005020378157496452,
+    "generation_clearance_fraction": 0.0,
+    "generation_foot_behind_score": 0.4869093894958496,
+    "generation_root_min_m": 0.5458536148071289,
+    "generation_foot_pull_motion_m": 0.03866243362426758,
+    "population_valid": 7,
+    "population_retrieved_valid": 0,
+    "population_stable": 2,
+    "population_retrieved": 9
+  }
+]

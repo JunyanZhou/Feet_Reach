@@ -1,0 +1,23 @@
+{
+  "contact_duration_s": {
+    "floor": 18.902,
+    "right_push_palm": 1.638,
+    "left_push_palm": 1.772,
+    "left_hip_yaw_link": 0.11,
+    "left_hip_roll_link": 0.088
+  },
+  "normal_impulse_Ns": {
+    "floor": 919.92,
+    "right_push_palm": 22.945,
+    "left_push_palm": 19.616,
+    "left_hip_yaw_link": 6.459,
+    "left_hip_roll_link": 8.081
+  },
+  "maximum_penetration_m": {
+    "floor": 0.000375,
+    "right_push_palm": 0.000505,
+    "left_push_palm": 0.00087,
+    "left_hip_yaw_link": 0.001609,
+    "left_hip_roll_link": 0.000873
+  }
+}

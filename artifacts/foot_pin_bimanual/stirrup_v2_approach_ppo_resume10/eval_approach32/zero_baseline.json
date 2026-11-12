@@ -1,0 +1,418 @@
+[
+  {
+    "seed": 12000,
+    "success": false,
+    "info": {
+      "success": false,
+      "lid": 0.060330030353329615,
+      "drift": 0.033144064412070184,
+      "three_way_s": 0.0,
+      "both_hands_s": 0.0,
+      "foot_contact_s": 2.3400000000000016,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12001,
+    "success": false,
+    "info": {
+      "success": false,
+      "lid": 0.05872243337476617,
+      "drift": 0.036066671022431315,
+      "three_way_s": 0.0,
+      "both_hands_s": 0.0,
+      "foot_contact_s": 2.2000000000000015,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12002,
+    "success": false,
+    "info": {
+      "success": false,
+      "lid": 0.009227050666928286,
+      "drift": 0.02774781695476748,
+      "three_way_s": 0.0,
+      "both_hands_s": 0.0,
+      "foot_contact_s": 1.640000000000001,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12003,
+    "success": true,
+    "info": {
+      "success": true,
+      "lid": 0.012053858692962629,
+      "drift": 0.03057394696062161,
+      "three_way_s": 0.04,
+      "both_hands_s": 0.04,
+      "foot_contact_s": 3.0800000000000023,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12004,
+    "success": false,
+    "info": {
+      "success": false,
+      "lid": 0.027290083311290726,
+      "drift": 0.02870218476188338,
+      "three_way_s": 0.0,
+      "both_hands_s": 0.0,
+      "foot_contact_s": 1.9000000000000012,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12005,
+    "success": true,
+    "info": {
+      "success": true,
+      "lid": -7.576971944374687e-05,
+      "drift": 0.033490775217361546,
+      "three_way_s": 0.0,
+      "both_hands_s": 0.0,
+      "foot_contact_s": 3.0800000000000023,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12006,
+    "success": false,
+    "info": {
+      "success": false,
+      "lid": 0.015931739395282814,
+      "drift": 0.02748201866840433,
+      "three_way_s": 0.0,
+      "both_hands_s": 0.0,
+      "foot_contact_s": 0.7800000000000004,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12007,
+    "success": false,
+    "info": {
+      "success": false,
+      "lid": 0.024713874802121553,
+      "drift": 0.03162175997377204,
+      "three_way_s": 0.0,
+      "both_hands_s": 0.0,
+      "foot_contact_s": 1.720000000000001,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12008,
+    "success": false,
+    "info": {
+      "success": false,
+      "lid": 0.01751668831316928,
+      "drift": 0.028909490611425313,
+      "three_way_s": 0.0,
+      "both_hands_s": 0.0,
+      "foot_contact_s": 1.8800000000000012,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12009,
+    "success": true,
+    "info": {
+      "success": true,
+      "lid": -0.0004535059299046052,
+      "drift": 0.02777080322996778,
+      "three_way_s": 0.02,
+      "both_hands_s": 0.02,
+      "foot_contact_s": 3.0800000000000023,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12010,
+    "success": false,
+    "info": {
+      "success": false,
+      "lid": 0.028107010441700397,
+      "drift": 0.03017126433710906,
+      "three_way_s": 0.0,
+      "both_hands_s": 0.0,
+      "foot_contact_s": 1.3200000000000007,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12011,
+    "success": false,
+    "info": {
+      "success": false,
+      "lid": 0.01629971892050943,
+      "drift": 0.02849752670123652,
+      "three_way_s": 0.0,
+      "both_hands_s": 0.0,
+      "foot_contact_s": 1.4000000000000008,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12012,
+    "success": true,
+    "info": {
+      "success": true,
+      "lid": 0.0013194814403382801,
+      "drift": 0.03136671046951142,
+      "three_way_s": 0.12000000000000001,
+      "both_hands_s": 0.12000000000000001,
+      "foot_contact_s": 1.620000000000001,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12013,
+    "success": false,
+    "info": {
+      "success": false,
+      "lid": 0.0683184279170506,
+      "drift": 0.030318009550407272,
+      "three_way_s": 0.0,
+      "both_hands_s": 0.0,
+      "foot_contact_s": 2.1000000000000014,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12014,
+    "success": false,
+    "info": {
+      "success": false,
+      "lid": 0.020055953348695803,
+      "drift": 0.02779184432202682,
+      "three_way_s": 0.0,
+      "both_hands_s": 0.0,
+      "foot_contact_s": 1.2400000000000007,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12015,
+    "success": false,
+    "info": {
+      "success": false,
+      "lid": 0.020070986731515122,
+      "drift": 0.031157022868266656,
+      "three_way_s": 0.0,
+      "both_hands_s": 0.0,
+      "foot_contact_s": 1.3000000000000007,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12016,
+    "success": false,
+    "info": {
+      "success": false,
+      "lid": 0.015151236362752032,
+      "drift": 0.03935352942124138,
+      "three_way_s": 0.0,
+      "both_hands_s": 0.0,
+      "foot_contact_s": 1.1200000000000006,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12017,
+    "success": false,
+    "info": {
+      "success": false,
+      "lid": 0.017640245070793106,
+      "drift": 0.03516769652752148,
+      "three_way_s": 0.0,
+      "both_hands_s": 0.0,
+      "foot_contact_s": 1.4200000000000008,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12018,
+    "success": false,
+    "info": {
+      "success": false,
+      "lid": 0.014059717424481918,
+      "drift": 0.029172170588778662,
+      "three_way_s": 0.0,
+      "both_hands_s": 0.0,
+      "foot_contact_s": 1.3600000000000008,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12019,
+    "success": false,
+    "info": {
+      "success": false,
+      "lid": 0.053934962852384506,
+      "drift": 0.03046275785400878,
+      "three_way_s": 0.0,
+      "both_hands_s": 0.0,
+      "foot_contact_s": 2.2000000000000015,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12020,
+    "success": false,
+    "info": {
+      "success": false,
+      "lid": -0.0003310795927106016,
+      "drift": 0.030561487701840268,
+      "three_way_s": 0.0,
+      "both_hands_s": 0.0,
+      "foot_contact_s": 3.0800000000000023,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12021,
+    "success": true,
+    "info": {
+      "success": true,
+      "lid": -0.0005112907080730629,
+      "drift": 0.02781866513159367,
+      "three_way_s": 0.12000000000000001,
+      "both_hands_s": 0.12000000000000001,
+      "foot_contact_s": 3.0800000000000023,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12022,
+    "success": false,
+    "info": {
+      "success": false,
+      "lid": 0.040346121359155954,
+      "drift": 0.029909429924108832,
+      "three_way_s": 0.0,
+      "both_hands_s": 0.0,
+      "foot_contact_s": 1.8600000000000012,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12023,
+    "success": false,
+    "info": {
+      "success": false,
+      "lid": 0.010122644289937368,
+      "drift": 0.03339193521454379,
+      "three_way_s": 0.0,
+      "both_hands_s": 0.0,
+      "foot_contact_s": 1.8600000000000012,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12024,
+    "success": true,
+    "info": {
+      "success": true,
+      "lid": 0.0056239385792798136,
+      "drift": 0.025890424084025667,
+      "three_way_s": 0.04,
+      "both_hands_s": 0.04,
+      "foot_contact_s": 3.0800000000000023,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12025,
+    "success": true,
+    "info": {
+      "success": true,
+      "lid": 0.005574526870666957,
+      "drift": 0.02379472615870949,
+      "three_way_s": 0.1,
+      "both_hands_s": 0.12000000000000001,
+      "foot_contact_s": 1.2000000000000006,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12026,
+    "success": false,
+    "info": {
+      "success": false,
+      "lid": 0.010393024636002876,
+      "drift": 0.01982422333312724,
+      "three_way_s": 0.0,
+      "both_hands_s": 0.0,
+      "foot_contact_s": 3.0800000000000023,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12027,
+    "success": true,
+    "info": {
+      "success": true,
+      "lid": -0.00041653755462184403,
+      "drift": 0.03186048517801098,
+      "three_way_s": 0.0,
+      "both_hands_s": 0.0,
+      "foot_contact_s": 3.0800000000000023,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12028,
+    "success": false,
+    "info": {
+      "success": false,
+      "lid": 0.017537231166409404,
+      "drift": 0.0373799992332518,
+      "three_way_s": 0.0,
+      "both_hands_s": 0.0,
+      "foot_contact_s": 2.0800000000000014,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12029,
+    "success": false,
+    "info": {
+      "success": false,
+      "lid": 0.015172369793476746,
+      "drift": 0.03137126315295194,
+      "three_way_s": 0.0,
+      "both_hands_s": 0.0,
+      "foot_contact_s": 1.9200000000000013,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12030,
+    "success": true,
+    "info": {
+      "success": true,
+      "lid": 0.020743640506011476,
+      "drift": 0.029492620093616796,
+      "three_way_s": 0.0,
+      "both_hands_s": 0.0,
+      "foot_contact_s": 3.0800000000000023,
+      "fell": false
+    }
+  },
+  {
+    "seed": 12031,
+    "success": false,
+    "info": {
+      "success": false,
+      "lid": 0.024263686256584267,
+      "drift": 0.03630905833823655,
+      "three_way_s": 0.0,
+      "both_hands_s": 0.0,
+      "foot_contact_s": 1.5000000000000009,
+      "fell": false
+    }
+  }
+]

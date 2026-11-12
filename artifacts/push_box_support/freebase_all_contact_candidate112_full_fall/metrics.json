@@ -1,0 +1,88 @@
+{
+  "params": {
+    "contact_mode": "all",
+    "box_mass": 17.035605985803727,
+    "box_half_x": 0.2385742594753554,
+    "box_friction": 0.17360211038385243,
+    "box_com_z_offset": -0.0626419855437913,
+    "hand_z": 0.6072200602566236,
+    "hand_y": 0.19638438907843142,
+    "palm_radius": 0.03402775823867609,
+    "push_depth": 0.32132038890088055,
+    "waist_pitch": 0.3318631550526872,
+    "approach_gap": 0.005426760787133682,
+    "left_step_dx": 0.1070071896145189,
+    "left_step_start": 2.2145831500667614,
+    "left_step_duration": 1.2736009713129506,
+    "step_height": 0.09152577039769287,
+    "stop_on_fall": false
+  },
+  "teacher": {
+    "with_box": true,
+    "duration_s": 5.499999999999616,
+    "box_displacement_x_m": 0.28312877150601545,
+    "first_fall_s": null,
+    "final_root_z_m": 0.7834035448241946,
+    "min_root_z_m": 0.757191308719142,
+    "min_torso_z_m": 0.8006696992969995,
+    "max_box_tilt_rad": 0.01829952500486349,
+    "max_box_height_error_m": 0.004336863976278804,
+    "box_motion_during_both_hands_m": 0.0881180434869725,
+    "palm_contact_s": {
+      "left": 1.7720000000000014,
+      "right": 1.6380000000000012,
+      "both": 0.9820000000000008
+    },
+    "peak_palm_force_N": 77.64112215969593,
+    "palm_normal_impulse_Ns": 42.56083763393686,
+    "non_palm_normal_impulse_Ns": 14.539395971404472,
+    "non_palm_box_contact_count": 99,
+    "successful_push": true
+  },
+  "with_box_same_targets": {
+    "with_box": true,
+    "duration_s": 5.499999999999616,
+    "box_displacement_x_m": 0.28312877150601545,
+    "first_fall_s": null,
+    "final_root_z_m": 0.7834035448241946,
+    "min_root_z_m": 0.757191308719142,
+    "min_torso_z_m": 0.8006696992969995,
+    "max_box_tilt_rad": 0.01829952500486349,
+    "max_box_height_error_m": 0.004336863976278804,
+    "box_motion_during_both_hands_m": 0.0881180434869725,
+    "palm_contact_s": {
+      "left": 1.7720000000000014,
+      "right": 1.6380000000000012,
+      "both": 0.9820000000000008
+    },
+    "peak_palm_force_N": 77.64112215969593,
+    "palm_normal_impulse_Ns": 42.56083763393686,
+    "non_palm_normal_impulse_Ns": 14.539395971404472,
+    "non_palm_box_contact_count": 99,
+    "successful_push": true
+  },
+  "without_box_same_targets": {
+    "with_box": false,
+    "duration_s": 5.499999999999616,
+    "box_displacement_x_m": null,
+    "first_fall_s": 3.665999999999818,
+    "final_root_z_m": 0.09636811638189009,
+    "min_root_z_m": 0.07826341344214133,
+    "min_torso_z_m": 0.08458264116788054,
+    "max_box_tilt_rad": null,
+    "max_box_height_error_m": null,
+    "box_motion_during_both_hands_m": null,
+    "palm_contact_s": {
+      "left": 0.0,
+      "right": 0.0,
+      "both": 0.0
+    },
+    "peak_palm_force_N": 0.0,
+    "palm_normal_impulse_Ns": 0.0,
+    "non_palm_normal_impulse_Ns": 0.0,
+    "non_palm_box_contact_count": 0,
+    "successful_push": false
+  },
+  "shared_target_ticks": 275,
+  "maximum_target_difference": 0.0
+}

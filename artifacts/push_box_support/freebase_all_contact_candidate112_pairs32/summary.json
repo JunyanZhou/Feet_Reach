@@ -1,0 +1,29 @@
+{
+  "params": {
+    "contact_mode": "all",
+    "box_mass": 17.035605985803727,
+    "box_half_x": 0.2385742594753554,
+    "box_friction": 0.17360211038385243,
+    "box_com_z_offset": -0.0626419855437913,
+    "hand_z": 0.6072200602566236,
+    "hand_y": 0.19638438907843142,
+    "palm_radius": 0.03402775823867609,
+    "push_depth": 0.32132038890088055,
+    "waist_pitch": 0.3318631550526872,
+    "approach_gap": 0.005426760787133682,
+    "left_step_dx": 0.1070071896145189,
+    "left_step_start": 2.2145831500667614,
+    "left_step_duration": 1.2736009713129506,
+    "step_height": 0.09152577039769287,
+    "root_noise_m": 0.01,
+    "joint_noise_rad": 0.01,
+    "box_noise_m": 0.015
+  },
+  "episodes": 32,
+  "seed_start": 20000,
+  "success_with_box": 19,
+  "no_box_fall": 32,
+  "box_shift_mean_m": 0.4954996585902661,
+  "box_shift_median_m": 0.41129208887974755,
+  "box_tilt_mean_rad": 0.006592433492202229
+}

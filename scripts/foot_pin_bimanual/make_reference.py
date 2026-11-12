@@ -53,6 +53,11 @@ def main():
     root_pos = source.root_pos_w[0].numpy()
     root_quat = source.root_quat_w[0].numpy()
     q_start = source.joint_pos[0].numpy().copy()
+    # SciPy requires the initial guess to lie strictly inside the IK bounds.
+    # Some source clips sit exactly at the margin after float32 rounding.
+    limits_all = model.jnt_range[1:]
+    q_start = np.clip(q_start, limits_all[:, 0] + .003,
+                      limits_all[:, 1] - .003)
     data.qpos[:3] = root_pos
     data.qpos[3:7] = root_quat
     data.qpos[7:] = q_start

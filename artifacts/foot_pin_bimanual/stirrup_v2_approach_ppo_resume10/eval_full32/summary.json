@@ -1,0 +1,16 @@
+{
+  "checkpoint": "artifacts/foot_pin_bimanual/stirrup_v2_approach_ppo_resume10/final.pt",
+  "episodes": 32,
+  "start_state": null,
+  "phase": "full",
+  "episode_end": 4.6,
+  "action_until": 3.1,
+  "seed_start": 12000,
+  "noise_scale": 1.0,
+  "success_with": 1,
+  "success_without": 0,
+  "lid_mean_with_m": 0.03791050925928335,
+  "lid_mean_without_m": 0.0203288068951003,
+  "base_drift_mean_with_m": 0.09229711752781826,
+  "base_drift_mean_without_m": 0.01588863508076864
+}

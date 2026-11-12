@@ -177,7 +177,7 @@ artifacts/unified_support_reach/*
 # assets
 *.ipynb
 
-# Generated images and videos: keep all media out of GitHub.
+# Generated images and videos are ignored by default. Curated demos can be added explicitly.
 *.[pP][nN][gG]
 *.[aA][pP][nN][gG]
 *.[jJ][pP][gG]
@@ -267,3 +267,7 @@ dataset/unified_withdrawn_support/*
 # Official SONIC models are downloaded from pinned upstream URLs with SHA-256 checks.
 deploy/mujoco_whole_body/sonic/*.onnx
 v2_finetune_final.pt
+
+# Temporary scenes written by the MuJoCo task builders.
+deploy/mujoco_whole_body/g1/g1_foot_pin_*.xml
+deploy/mujoco_whole_body/g1/g1_push_box_freebase_pid*.xml

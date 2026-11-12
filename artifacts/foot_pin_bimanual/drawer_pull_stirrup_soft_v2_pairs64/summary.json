@@ -1,0 +1,27 @@
+{
+  "episodes": 64,
+  "seed_start": 18000,
+  "duration_s": 4.6,
+  "open_threshold_m": 0.15,
+  "success_with": 0,
+  "success_without": 0,
+  "mechanical_with": 1,
+  "mechanical_without": 2,
+  "supported_only_mechanical": 1,
+  "coordinated_with": 0,
+  "lid_with_mean_m": 0.041927954707854376,
+  "lid_without_mean_m": 0.0191099314863097,
+  "perturbations": {
+    "root_xy_uniform_m": 0.01,
+    "joint_normal_std_rad": 0.01,
+    "base_xy_uniform_m": 0.015,
+    "base_friction_multiplier": [
+      0.9,
+      1.1
+    ],
+    "lid_friction_multiplier": [
+      0.9,
+      1.1
+    ]
+  }
+}

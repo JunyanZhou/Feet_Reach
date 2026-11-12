@@ -1,0 +1,25 @@
+{
+  "with_brace": true,
+  "seed": null,
+  "randomize": false,
+  "duration_s": 4.599999999999715,
+  "lid_open_m": 0.19077877789975844,
+  "maximum_lid_open_m": 0.19138126309778797,
+  "max_stable_lid_open_m": 0.19138126309778797,
+  "three_way_motion_m": 0.12325966985170886,
+  "three_way_active_contact_s": 0.34,
+  "base_drift_m": 0.018367763899186332,
+  "root_min_height_m": 0.7401407591919168,
+  "base_max_drift_m": 0.031640247873549104,
+  "contact_s": {
+    "left_hand": 1.572,
+    "right_hand": 0.952,
+    "foot_brace": 4.08,
+    "both_hands": 0.5,
+    "three_way": 0.382
+  },
+  "fell": false,
+  "open_threshold_m": 0.15,
+  "success": true,
+  "strict_success": true
+}
